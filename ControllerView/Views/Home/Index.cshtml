@@ -1,0 +1,8 @@
+﻿@model HomeViewModel
+
+<div class="row">
+    @foreach (var task in Model.Tasks)
+    {
+        <partial name="_TaskCard" model="task"/>
+    }
+</div>
