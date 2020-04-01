@@ -3,6 +3,7 @@ using System.Security.Principal;
 using ControllerView.Models;
 using ControllerView.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControllerView.Controllers
 {
@@ -19,7 +20,7 @@ namespace ControllerView.Controllers
         {
             var viewModel = new HomeViewModel
             {
-                Tasks = _context.Tasks.ToList()
+                Tasks = _context.Tasks.Include(x => x.Category).ToList()
             };
             return View(viewModel);
         }

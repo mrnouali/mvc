@@ -6,5 +6,7 @@ namespace ControllerView.ViewModels
     public class HomeViewModel
     {
         public IEnumerable<Task> Tasks { get; set; }
+        
+        // TODO ?
     }
 }
